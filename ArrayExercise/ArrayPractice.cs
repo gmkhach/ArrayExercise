@@ -11,7 +11,7 @@ namespace ArrayExercise
         public void Swap(int[] array, int x, int y)
         {
             var length = array.Length;
-            if (x>=0 && x<length && y>=0 && y< length)
+            if (x>=0 && x<length && y>=0 && y<length)
             {
                 var temp = array[x];
                 array[x] = array[y];
@@ -21,6 +21,7 @@ namespace ArrayExercise
             {
                 throw new IndexOutOfRangeException();
             }
+            print(array, "This is the altered array: ");
         }
 
         public void ReverseInPlace(int[] array)
@@ -32,6 +33,7 @@ namespace ArrayExercise
                 array[i] = array[length - 1 - i];
                 array[length - 1 - i] = temp;
             }
+            print(array, "This is the reversedInPlace array: ");
         }
 
         public int[] ReverseNew(int[] array)
@@ -45,8 +47,17 @@ namespace ArrayExercise
                 array[i] = array[length - 1 - i];
                 array[length - 1 - i] = temp;
             }
-
+            print(array, "This is the reversedNew array: ");
             return newArray;
+        }
+
+        public void print(int[] array, string printString)
+        {
+            for (int i = 0; i < array.Length; i++)
+            {
+                printString += " " + array[i];
+            }
+            Console.WriteLine(printString);
         }
     }
 }
