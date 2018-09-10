@@ -27,16 +27,16 @@ namespace ArrayExercise
             }
             Console.WriteLine(printString2);
 
-            practice.ReverseInPlace();
-            string printString3 = "This is the reversed array: ";
-            for (int i = 0; i < myArray.Length; i++)
-            {
-                printString3 += " " + myArray[i];
-            }
-            Console.WriteLine(printString3);
+            //practice.ReverseInPlace();
+            //string printString3 = "This is the reversedInPlace array: ";
+            //for (int i = 0; i < myArray.Length; i++)
+            //{
+            //    printString3 += " " + myArray[i];
+            //}
+            //Console.WriteLine(printString3);
 
             int[] newArray = practice.ReverseNew();
-            string printString4 = "This is the reversed array: ";
+            string printString4 = "This is the reversedNew array: ";
             for (int i = 0; i < myArray.Length; i++)
             {
                 printString4 += " " + myArray[i];
