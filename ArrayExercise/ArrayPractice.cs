@@ -8,14 +8,7 @@ namespace ArrayExercise
 {
     class ArrayPractice
     {
-        public ArrayPractice(int[] array)
-        {
-            this.array = array;
-        }
-
-        private int[] array;
-
-        public void Swap(int x, int y)
+        public void Swap(int[] array, int x, int y)
         {
             var length = array.Length;
             if (x>=0 && x<length && y>=0 && y< length)
@@ -30,7 +23,7 @@ namespace ArrayExercise
             }
         }
 
-        public void ReverseInPlace()
+        public void ReverseInPlace(int[] array)
         {
             var length = array.Length;
             for (int i=0; i<array.Length/2; i++)
@@ -41,7 +34,7 @@ namespace ArrayExercise
             }
         }
 
-        public int[] ReverseNew()
+        public int[] ReverseNew(int[] array)
         {
             var length = array.Length;
             int[] newArray = new int[length];
