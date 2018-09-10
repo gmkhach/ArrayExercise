@@ -10,21 +10,38 @@ namespace ArrayExercise
     {
         static void Main(string[] args)
         {
-            int[] originalArray = { 1, 2, 3, 4, 5 };
+            int[] myArray = { 1, 2, 3, 4, 5 };
             string printString = "This is the original array: ";
-            for (int i=0; i< originalArray.Length; i++)
+            for (int i=0; i< myArray.Length; i++)
             {
-                printString += " " + originalArray[i];
+                printString += " " + myArray[i];
             }
             Console.WriteLine(printString);
-            ArrayPractice mySwapper = new ArrayPractice(originalArray);
-            mySwapper.Swap(0, 3);
+
+            ArrayPractice practice = new ArrayPractice(myArray);
+            practice.Swap(0, 3);
             string printString2 = "This is the altered array: ";
-            for (int i = 0; i < originalArray.Length; i++)
+            for (int i = 0; i < myArray.Length; i++)
             {
-                printString2 += " " + originalArray[i];
+                printString2 += " " + myArray[i];
             }
             Console.WriteLine(printString2);
+
+            practice.ReverseInPlace();
+            string printString3 = "This is the reversed array: ";
+            for (int i = 0; i < myArray.Length; i++)
+            {
+                printString3 += " " + myArray[i];
+            }
+            Console.WriteLine(printString3);
+
+            int[] newArray = practice.ReverseNew();
+            string printString4 = "This is the reversed array: ";
+            for (int i = 0; i < myArray.Length; i++)
+            {
+                printString4 += " " + myArray[i];
+            }
+            Console.WriteLine(printString4);
         }
     }
 }
