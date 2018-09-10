@@ -40,7 +40,6 @@ namespace ArrayExercise
         {
             var length = array.Length;
             int[] newArray = new int[length];
-
             for (int i = 0; i < length / 2; i++)
             {
                 var temp = array[i];
@@ -55,8 +54,16 @@ namespace ArrayExercise
         {
             for (int i = 0; i < array.Length; i++)
             {
-                printString += " " + array[i];
+                if(i == 0)
+                {
+                    printString += "\n{ " + array[0];
+                }
+                else
+                {
+                    printString += ", " + array[i];
+                }
             }
+            printString += " }\n";
             Console.WriteLine(printString);
         }
     }
