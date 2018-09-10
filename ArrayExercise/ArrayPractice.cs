@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace ArrayExercise
 {
-    class ArrayItemSwapper
+    class ArrayPractice
     {
-        public ArrayItemSwapper(int[] array)
+        public ArrayPractice(int[] array)
         {
             this.array = array;
         }
 
         private int[] array;
 
-        public void swapArrayItems(int x, int y)
+        public void Swap(int x, int y)
         {
             int valueX = array[x];
             int valueY = array[y];
