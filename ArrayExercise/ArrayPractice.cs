@@ -39,7 +39,6 @@ namespace ArrayExercise
         public int[] ReverseNew(int[] array)
         {
             var length = array.Length;
-            int[] newArray = new int[length];
             for (int i = 0; i < length / 2; i++)
             {
                 var temp = array[i];
@@ -47,6 +46,11 @@ namespace ArrayExercise
                 array[length - 1 - i] = temp;
             }
             print(array, "This is the reversedNew array: ");
+            int[] newArray = new int[length];
+            for (int i = 0; i < length; i++)
+            {
+                newArray[i] = array[i];
+            }
             return newArray;
         }
 
@@ -66,5 +70,6 @@ namespace ArrayExercise
             printString += " }\n";
             Console.WriteLine(printString);
         }
+
     }
 }
