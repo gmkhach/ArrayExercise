@@ -8,6 +8,23 @@ namespace ArrayExercise
 {
     class ArrayPractice
     {
+        public void print(int[] array, string printString)
+        {
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (i == 0)
+                {
+                    printString += "\n{ " + array[0];
+                }
+                else
+                {
+                    printString += ", " + array[i];
+                }
+            }
+            printString += " }\n";
+            Console.WriteLine(printString);
+        }
+
         public void Swap(int[] array, int x, int y)
         {
             var length = array.Length;
@@ -21,7 +38,7 @@ namespace ArrayExercise
             {
                 throw new IndexOutOfRangeException();
             }
-            print(array, "This is the altered array: ");
+            print(array, $"This is the altered array, where element {x+1} and element {y+1} are swapped with places:");
         }
 
         public void ReverseInPlace(int[] array)
@@ -33,7 +50,7 @@ namespace ArrayExercise
                 array[i] = array[length - 1 - i];
                 array[length - 1 - i] = temp;
             }
-            print(array, "This is the reversedInPlace array: ");
+            print(array, "This is the same array but with it's elements order reversed: ");
         }
 
         public int[] ReverseNew(int[] array)
@@ -45,7 +62,7 @@ namespace ArrayExercise
                 array[i] = array[length - 1 - i];
                 array[length - 1 - i] = temp;
             }
-            print(array, "This is the reversedNew array: ");
+            print(array, "This is a new array with a reverse order of the previous array: ");
             int[] newArray = new int[length];
             for (int i = 0; i < length; i++)
             {
@@ -54,22 +71,28 @@ namespace ArrayExercise
             return newArray;
         }
 
-        public void print(int[] array, string printString)
+        public int[] BruteForceSort(int[] array)
         {
-            for (int i = 0; i < array.Length; i++)
+            int length = array.Length;
+            for (int i = 0; i < length; i++)
             {
-                if(i == 0)
+                for (int j = i + 1; j < length; j++)
                 {
-                    printString += "\n{ " + array[0];
-                }
-                else
-                {
-                    printString += ", " + array[i];
+                    if (array[i] > array[j])
+                    {
+                        int temp = array[i];
+                        array[i] = array[j];
+                        array[j] = temp;
+                    }
                 }
             }
-            printString += " }\n";
-            Console.WriteLine(printString);
+            int[] newArray = new int[length];
+            for (int i = 0; i < length; i++)
+            {
+                newArray[i] = array[i];
+            }
+            print(newArray, "This is the brute-force-sorted array: ");
+            return newArray;
         }
-
     }
 }
