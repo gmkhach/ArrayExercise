@@ -17,6 +17,7 @@ namespace ArrayExercise
             practice.ReverseInPlace(myArray);
             int[] reversedArray = practice.ReverseNew(myArray);
             int[] bruteForceSortedArray = practice.BruteForceSort(myArray);
+            int[] randomlySortedArray = practice.RandomSort(myArray);
         }
     }
 }

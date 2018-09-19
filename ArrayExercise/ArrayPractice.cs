@@ -106,5 +106,38 @@ namespace ArrayExercise
             print(newArray, "This is the brute-force-sorted array: ");
             return newArray;
         }
+
+        // This is the most inefficient way of sorting an array and should never be used
+        public int[] RandomSort(int[] array)
+        {
+            int len = array.Length;
+            bool keepLooping = true;
+            Random rnd = new Random();
+            do
+            {
+                for(int i = 0; i < len; i++)
+                {
+                    int j = rnd.Next(len);
+                    int temp = array[i];
+                    array[i] = array[j];
+                    array[j] = temp;
+                }
+                keepLooping = false;
+                for(int i = 0; i< len-1; i++)
+                {
+                    if(array[i] > array[i+1])
+                    {
+                        keepLooping = true;
+                    }
+                }
+            } while (keepLooping);
+            int[] newArray = new int[len];
+            for (int i = 0; i < len; i++)
+            {
+                newArray[i] = array[i];
+            }
+            print(newArray, "This is the randomly-sorted array: ");
+            return newArray;
+        }
     }
 }
